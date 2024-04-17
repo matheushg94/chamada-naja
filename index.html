@@ -12,25 +12,39 @@
     <header class="header">
         <h1>NAJA</h1>
     </header>
+
     <main class="main">
         <h2>Menu Principal</h2>
-        <section class="cadastro">
+
+        <section class="section cadastro">
             <h3>Cadastro de novo aluno</h3>
-            <form action="#">
+            <form action="#" class="form" method="get">
                 <div>
                     <label for="nome">Nome do aluno:</label>
-                    <input type="text" name="nome" id="nome">
+                    <input type="text" name="nome" id="nome" required>
                 </div>
                 <div>
-                    <label for="turma">Escolha uma turma:</label>
-                    <input type="checkbox" name="turma" id="turma">S/Q 18h
+                    <p>Escolha uma turma:</p>
+                    <div>
+                        <input type="checkbox" name="cadastro" id="sq1800"><label for="sq1800">Seg e Qua - 18h</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="cadastro" id="sq1830"><label for="sq1830">Seg e Qua - 18h30</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="cadastro" id="tq1800"><label for="tq1800">Ter e Qui - 18h</label>
+                    </div>
                 </div>
-                <input type="submit" value="Cadastrar">
+                <input type="submit" class="button" value="Cadastrar">
             </form>
         </section>
+        
     </main>
+
     <footer class="footer">
         <p>Desenvolvido por <a target="_blank" href="#">Matheus</a>.</p>
     </footer>
+
+    <script src="script/main.js"></script>
 </body>
 </html>

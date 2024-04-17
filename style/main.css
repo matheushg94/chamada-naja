@@ -1,5 +1,7 @@
 :root {
-    --laranja: #ff7a15;
+    --orange: #ff7a15;
+
+    --bold: 600;
 }
 
 *,
@@ -17,18 +19,18 @@ body {
 /* HEADER */
 
 .header {
-    background-color: #000;
-    height: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 4rem;
+    background-color: #000;
 }
 
 h1 {
-    color: var(--laranja);
+    color: var(--orange);
     text-transform: uppercase;
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: var(--bold);
 }
 
 /* MAIN */
@@ -44,10 +46,47 @@ h2 {
     margin: 2rem 0;
     font: 1.5rem;
     text-transform: uppercase;
+    font-weight: var(--bold);
 }
 
-.cadastro {
-    
+h3 {
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.button {
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: var(--orange);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    font-weight: var(--bold);
+    cursor: pointer;
+}
+
+.section {
+    width: 320px;
+    padding: 1rem;
+    border: 2px solid var(--orange);
+    border-radius: 10px;
+    background-color: #f0f0f0;
+}
+
+.form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form > div {
+    width: 100%;
+}
+
+.form > div > div {
+    margin: .5rem 0;
 }
 
 /* FOOTER */
@@ -55,11 +94,11 @@ h2 {
 .footer {
     position: fixed;
     bottom: 0;
-    height: 2rem;
-    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 2rem;
+    width: 100vw;
     background-color: #888888;
     color: #2e2e2e;
     font-size: .825rem;
@@ -67,10 +106,6 @@ h2 {
 
 .footer a {
     text-decoration: none;
-    font-weight: 600;
+    font-weight: var(--bold);
     color: #131313;
-}
-
-.teste {
-    border: 1px solid red;
 }
