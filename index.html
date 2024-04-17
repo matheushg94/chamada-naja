@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chamada NAJA</title>
+
+    <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
-    
-    
+    <header class="header">
+        <h1>NAJA</h1>
+    </header>
+    <main class="main">
+        <h2>Menu Principal</h2>
+        <section class="cadastro" style="border: 1px solid red;">
+            <h3>Cadastro de novo aluno</h3>
+            <form action="#">
+                <div>
+                    <label for="nome">Nome do aluno:</label>
+                    <input type="text" name="nome" id="nome">
+                </div>
+                <div>
+                    <label for="turma">Escolha uma turma:</label>
+                    <input type="checkbox" name="turma" id="turma">S/Q 18h
+                </div>
+                <input type="submit" value="Cadastrar">
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Desenvolvido por <a target="_blank" href="#">Matheus</a>.</p>
+    </footer>
 </body>
 </html>
