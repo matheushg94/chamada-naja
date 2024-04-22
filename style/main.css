@@ -90,6 +90,29 @@ h3 {
     margin: .5rem 0;
 }
 
+/* TABELA */
+
+.chamada {
+    width: 90%;
+}
+
+table {
+    display: grid;
+}
+
+table > tr {
+    display: grid;
+    grid-template-columns: 32px 1fr 1fr;
+}
+
+table > tr * {
+    border: 1px solid #2e2e2e;
+}
+
+table th {
+    font-weight: 600;
+}
+
 /* FOOTER */
 
 .footer {

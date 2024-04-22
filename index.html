@@ -20,7 +20,7 @@
     <main class="main">
         <h2>Menu Principal</h2>
 
-        <section class="section cadastro">
+        <section class="section">
             <h3>Cadastro de novo aluno</h3>
             <form action="#" class="form" id="form-cadastro" method="get">
                 <div>
@@ -46,7 +46,26 @@
             </form>
         </section>
 
-        <div id="teste"></div>
+        <section class="section">
+            <h3>Visualizar chamada</h3>
+            <form action="#" class="form" id="form-visualizar" method="get">
+                <div>
+                    <label for="turma">Escolha uma turma:</label>
+                    <input list="turmas" id="turma-escolhida" required>
+                    <datalist id="turmas">
+                        <option value="Seg e Qua - 18h00"></option>
+                        <option value="Seg e Qua - 18h30"></option>
+                        <option value="Ter e Qui - 18h00"></option>
+                        <option value="Ter e Qui - 18h30"></option>
+                    </datalist>
+                </div>
+                <input type="submit" class="button" value="Visualizar">
+            </form>
+        </section>
+
+        <section class="chamada">
+
+        </section>
         
     </main>
 
@@ -55,5 +74,6 @@
     </footer>
 
     <script src="script/cadastro.js"></script>
+    <script src="script/visualizar.js"></script>
 </body>
 </html>
