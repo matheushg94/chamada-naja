@@ -72,6 +72,7 @@ h3 {
     border: 2px solid var(--orange);
     border-radius: 10px;
     background-color: #f0f0f0;
+    margin-bottom: 1rem;
 }
 
 .form {

@@ -2,20 +2,19 @@ const formCadastro = document.querySelector('#form-cadastro');
 
 const checkNome = nome => {
     if (nome === '') {
-        teste.innerHTML = 'Digite o nome do aluno.';
         return false;
     }
     return true;
 }
 
 const checkTurma = turmas => {
+    let isTurmaChecked = false;
     turmas.forEach(turma => {
         if (turma.checked === true) {
-            return true;
+            isTurmaChecked = true;
         }
     });
-    teste.innerHTML = 'Selecione uma turma.';
-    return false;
+    return isTurmaChecked;
 }
 
 const saveAluno = (nome, turma) => {
@@ -37,9 +36,10 @@ formCadastro.addEventListener('submit', e => {
                 turmaEscolhida = turma.value;
             }
         })
-
+        console.log(`Nome: ${nome} - Turma: ${turmaEscolhida}`);
         saveAluno(nome, turmaEscolhida);
-    }  
+        document.location = 'pages/success.html';
+    } else {
+        teste.innerHTML = 'Digite o nome e escolha uma turma.';
+    }
 });
-
-
