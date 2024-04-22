@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chamada NAJA</title>
 
+    <!-- CSS reset -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- My styles -->
     <link rel="stylesheet" href="style/main.css">
 </head>
+
 <body>
     <header class="header">
         <h1>NAJA</h1>
@@ -18,7 +22,7 @@
 
         <section class="section cadastro">
             <h3>Cadastro de novo aluno</h3>
-            <form action="#" class="form" method="get">
+            <form action="#" class="form" id="form-cadastro" method="get">
                 <div>
                     <label for="nome">Nome do aluno:</label>
                     <input type="text" name="nome" id="nome" required>
@@ -26,18 +30,23 @@
                 <div>
                     <p>Escolha uma turma:</p>
                     <div>
-                        <input type="checkbox" name="cadastro" id="sq1800"><label for="sq1800">Seg e Qua - 18h</label>
+                        <input type="radio" name="turma" id="sq1800"><label for="sq1800">Seg e Qua - 18h00</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="cadastro" id="sq1830"><label for="sq1830">Seg e Qua - 18h30</label>
+                        <input type="radio" name="turma" id="sq1830"><label for="sq1830">Seg e Qua - 18h30</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="cadastro" id="tq1800"><label for="tq1800">Ter e Qui - 18h</label>
+                        <input type="radio" name="turma" id="tq1800"><label for="tq1800">Ter e Qui - 18h00</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="turma" id="tq1830"><label for="tq1830">Ter e Qui - 18h30</label>
                     </div>
                 </div>
                 <input type="submit" class="button" value="Cadastrar">
             </form>
         </section>
+
+        <div id="teste"></div>
         
     </main>
 
