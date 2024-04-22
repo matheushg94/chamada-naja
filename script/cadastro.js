@@ -17,8 +17,15 @@ const checkTurma = turmas => {
     return isTurmaChecked;
 }
 
-const saveAluno = (nome, turma) => {
-    localStorage.setItem(nome, turma);
+const saveAluno = (nome, turma, lista) => {
+    let aluno = {
+        nome,
+        turma
+    }
+
+    lista.push(aluno);
+
+    localStorage.setItem('lista', JSON.stringify(lista));
 }
 
 formCadastro.addEventListener('submit', e => {
@@ -26,6 +33,7 @@ formCadastro.addEventListener('submit', e => {
 
     const nome = formCadastro.querySelector('#nome').value;
     const turmas = formCadastro.querySelectorAll("[name='turma']");
+    let listaAlunos = JSON.parse(localStorage.getItem('lista')) || [];
 
     if (checkNome(nome) && checkTurma(turmas)) {
         let turmaEscolhida;
@@ -34,8 +42,7 @@ formCadastro.addEventListener('submit', e => {
                 turmaEscolhida = turma.value;
             }
         })
-        console.log(`Nome: ${nome} - Turma: ${turmaEscolhida}`);
-        saveAluno(nome, turmaEscolhida);
+        saveAluno(nome, turmaEscolhida, listaAlunos);
         document.location = 'pages/success.html';
     }
 });

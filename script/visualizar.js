@@ -1,6 +1,6 @@
 const formVisualizar = document.querySelector('#form-visualizar');
 
-const createTable = () => {
+const createTable = (turma) => {
     const tb = document.createElement('table');
     const headerRow = document.createElement('tr');
     const numero = document.createElement('th');
@@ -14,13 +14,22 @@ const createTable = () => {
     headerRow.appendChild(dias);
     tb.appendChild(headerRow);
 
-    const row = document.createElement('tr');
-    const cell = document.createElement('td');
-    cell.innerText = 'teste';
-    row.appendChild(cell);
-    row.appendChild(cell);
-    row.appendChild(cell);
-    tb.appendChild(row);
+    const listaAlunos = JSON.parse(localStorage.getItem('lista'));
+        listaAlunos.forEach(aluno => {
+            if (aluno.turma === turma) {
+                const row = document.createElement('tr');
+                const num = document.createElement('td');
+                num.innerText = `1`;
+                const nome = document.createElement('td');
+                nome.innerText = `${aluno.nome}`;
+                const dias = document.createElement('td');
+                dias.innerText = `${aluno.turma}`;
+                row.appendChild(num);
+                row.appendChild(nome);
+                row.appendChild(dias);
+                tb.appendChild(row);
+            }
+        });
 
     return tb;
 }
@@ -31,5 +40,7 @@ formVisualizar.addEventListener('submit', e => {
     const turmaEscolhida = document.querySelector('#turma-escolhida').value;
     const chamada = document.querySelector('.chamada');
 
-    chamada.appendChild(createTable());
+    chamada.innerHTML = '';
+
+    chamada.appendChild(createTable(turmaEscolhida));
 })

@@ -14,6 +14,7 @@
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
 }
 
 /* HEADER */
@@ -90,7 +91,7 @@ h3 {
     margin: .5rem 0;
 }
 
-/* TABELA */
+/* TABLE */
 
 .chamada {
     width: 90%;
@@ -107,6 +108,8 @@ table > tr {
 
 table > tr * {
     border: 1px solid #2e2e2e;
+    height: 2rem;
+    padding: .2rem;
 }
 
 table th {
@@ -116,8 +119,7 @@ table th {
 /* FOOTER */
 
 .footer {
-    position: fixed;
-    bottom: 0;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
