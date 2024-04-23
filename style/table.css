@@ -1,0 +1,23 @@
+.chamada {
+    width: 90%;
+}
+
+table {
+    display: grid;
+}
+
+table th {
+    font-weight: var(--bold);
+    text-transform: uppercase;
+}
+
+table > tr {
+    display: grid;
+    grid-template-columns: 32px 1fr 1fr;
+}
+
+table > tr * {
+    border: 1px solid #2e2e2e;
+    height: 2rem;
+    padding: .2rem;
+}

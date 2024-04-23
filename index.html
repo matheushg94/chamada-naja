@@ -10,6 +10,8 @@
 
     <!-- My styles -->
     <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/table.css">
+    <link rel="stylesheet" href="style/print.css" media="print">
 </head>
 
 <body>
@@ -20,31 +22,7 @@
     <main class="main">
         <h2>Menu Principal</h2>
 
-        <section class="section">
-            <h3>Cadastro de novo aluno</h3>
-            <form action="#" class="form" id="form-cadastro" method="get">
-                <div>
-                    <label for="nome">Nome do aluno:</label>
-                    <input type="text" name="nome" id="nome" required>
-                </div>
-                <div>
-                    <p>Escolha uma turma:</p>
-                    <div>
-                        <input type="radio" name="turma" id="sq1800" value="Seg e Qua - 18h00"><label for="sq1800">Seg e Qua - 18h00</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="turma" id="sq1830" value="Seg e Qua - 18h30"><label for="sq1830">Seg e Qua - 18h30</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="turma" id="tq1800" value="Ter e Qui - 18h00"><label for="tq1800">Ter e Qui - 18h00</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="turma" id="tq1830" value="Ter e Qui - 18h30"><label for="tq1830">Ter e Qui - 18h30</label>
-                    </div>
-                </div>
-                <input type="submit" class="button" value="Cadastrar">
-            </form>
-        </section>
+        <a href="pages/cadastro.html"><button class="button">Cadastrar aluno</button></a>
 
         <section class="section">
             <h3>Visualizar chamada</h3>
@@ -64,7 +42,6 @@
         </section>
 
         <section class="chamada">
-
         </section>
         
     </main>
@@ -73,7 +50,6 @@
         <p>Desenvolvido por <a target="_blank" href="#">Matheus</a>.</p>
     </footer>
 
-    <script src="script/cadastro.js"></script>
     <script src="script/visualizar.js"></script>
 </body>
 </html>

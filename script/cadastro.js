@@ -17,15 +17,15 @@ const checkTurma = turmas => {
     return isTurmaChecked;
 }
 
-const saveAluno = (nome, turma, lista) => {
+const saveAluno = (nome, turma, listaAlunos) => {
     let aluno = {
         nome,
         turma
     }
 
-    lista.push(aluno);
+    listaAlunos.push(aluno);
 
-    localStorage.setItem('lista', JSON.stringify(lista));
+    localStorage.setItem('lista', JSON.stringify(listaAlunos));
 }
 
 formCadastro.addEventListener('submit', e => {
@@ -43,6 +43,6 @@ formCadastro.addEventListener('submit', e => {
             }
         })
         saveAluno(nome, turmaEscolhida, listaAlunos);
-        document.location = 'pages/success.html';
+        document.location = './success.html';
     }
 });

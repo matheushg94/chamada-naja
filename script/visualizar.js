@@ -1,10 +1,19 @@
 const formVisualizar = document.querySelector('#form-visualizar');
 
+const getDate = () => {
+    const todayDate = new Date();
+    const month = todayDate.getMonth();
+    const year = todayDate.getFullYear();
+    const date = new Date(year, month, 1);
+
+    console.log(date);
+}
+
 const createTable = (turma) => {
     const tb = document.createElement('table');
     const headerRow = document.createElement('tr');
     const numero = document.createElement('th');
-    numero.innerText = 'n°';
+    numero.innerText = 'N°';
     const nome = document.createElement('th');
     nome.innerText = 'NOME';
     const dias = document.createElement('th');
@@ -13,6 +22,8 @@ const createTable = (turma) => {
     headerRow.appendChild(nome);
     headerRow.appendChild(dias);
     tb.appendChild(headerRow);
+
+    getDate();
 
     const listaAlunos = JSON.parse(localStorage.getItem('lista'));
         listaAlunos.forEach(aluno => {
