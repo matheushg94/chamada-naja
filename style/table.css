@@ -13,7 +13,7 @@ table th {
 
 table > tr {
     display: grid;
-    grid-template-columns: 32px 1fr 1fr;
+    grid-template-columns: 32px 1fr repeat(10, 32px);
 }
 
 table > tr * {
