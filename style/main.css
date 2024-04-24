@@ -102,6 +102,8 @@ h3 {
 /* FOOTER */
 
 .footer {
+    position: absolute;
+    bottom: 0;
     margin-top: 2rem;
     display: flex;
     justify-content: center;
