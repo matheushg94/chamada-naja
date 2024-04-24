@@ -40,7 +40,8 @@ const getDate = (turma) => {
     return {diaNumero, diaDaSemana}
 }
 
-const getListaDeDias = (diaNumero, diaDaSemana) => {
+const getListaDeDias = (turma) => {
+    const {diaNumero, diaDaSemana} = getDate(turma);
     let lista = [diaNumero];
     let contador = diaNumero;
 
@@ -102,6 +103,7 @@ const getListaDeDias = (diaNumero, diaDaSemana) => {
 
 const createTable = (turma) => {
     const tb = document.createElement('table');
+
     const headerRow = document.createElement('tr');
     const thNumero = document.createElement('th');
     thNumero.innerText = 'N°';
@@ -109,36 +111,36 @@ const createTable = (turma) => {
     thNome.innerText = 'NOME';
     headerRow.appendChild(thNumero);
     headerRow.appendChild(thNome);
-    
-    const {diaNumero, diaDaSemana} = getDate(turma);
-    const listaDeDias = getListaDeDias(diaNumero, diaDaSemana);
+    const listaDeDias = getListaDeDias(turma);
     listaDeDias.forEach(dia => {
         const celulaDia = document.createElement('th');
-        celulaDia.innerText = dia;
+        if (dia <= 31) {
+            celulaDia.innerText = dia;
+        } else {
+            celulaDia.innerText = ' ';
+        }
         headerRow.appendChild(celulaDia);
     })
-
     tb.appendChild(headerRow);
 
+    const listaAlunosTotal = JSON.parse(localStorage.getItem('lista'));
+    const listaAlunos = listaAlunosTotal.filter(aluno => aluno.turma === turma);
 
-    const listaAlunos = JSON.parse(localStorage.getItem('lista'));
-        listaAlunos.forEach(aluno => {
-            if (aluno.turma === turma) {
-                const row = document.createElement('tr');
-                const num = document.createElement('td');
-                num.innerText = `1`;
-                const nome = document.createElement('td');
-                nome.innerText = `${aluno.nome}`;
-                row.appendChild(num);
-                row.appendChild(nome);
-                listaDeDias.forEach(dia => {
-                    const blankCell = document.createElement('td');
-                    blankCell.innerText = ' ';
-                    row.appendChild(blankCell);
-                })
-                tb.appendChild(row);
-            }
-        });
+    listaAlunos.forEach((aluno, i) => {
+        const row = document.createElement('tr');
+        const num = document.createElement('td');
+        num.innerText = i + 1;
+        const nome = document.createElement('td');
+        nome.innerText = `${aluno.nome}`;
+        row.appendChild(num);
+        row.appendChild(nome);
+        listaDeDias.forEach(dia => {
+            const blankCell = document.createElement('td');
+            blankCell.innerText = ' ';
+            row.appendChild(blankCell);
+        })
+        tb.appendChild(row);
+    });
 
     return tb;
 }
@@ -146,10 +148,16 @@ const createTable = (turma) => {
 formVisualizar.addEventListener('submit', e => {
     e.preventDefault();
 
-    const turmaEscolhida = document.querySelector('#turma-escolhida').value;
+    const turmas = formVisualizar.querySelectorAll("[name='turma']");
+    let turmaEscolhida;
+    turmas.forEach(turma => {
+        if (turma.checked === true) {
+            turmaEscolhida = turma.value;
+        }
+    })
+    // const turmaEscolhida = document.querySelector('#turma-escolhida').value;
+
     const chamada = document.querySelector('.chamada');
-
     chamada.innerHTML = '';
-
     chamada.appendChild(createTable(turmaEscolhida));
 })
