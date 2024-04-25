@@ -26,6 +26,8 @@ const saveAluno = (nome, turma, listaAlunos) => {
     listaAlunos.push(aluno);
 
     localStorage.setItem('lista', JSON.stringify(listaAlunos));
+
+    msg.innerText = 'Aluno cadastrado com sucesso!'
 }
 
 formCadastro.addEventListener('submit', e => {
@@ -33,6 +35,7 @@ formCadastro.addEventListener('submit', e => {
 
     const nome = formCadastro.querySelector('#nome').value;
     const turmas = formCadastro.querySelectorAll("[name='turma']");
+    const msg = document.querySelector('#msg');
     let listaAlunos = JSON.parse(localStorage.getItem('lista')) || [];
 
     if (checkNome(nome) && checkTurma(turmas)) {
@@ -43,6 +46,5 @@ formCadastro.addEventListener('submit', e => {
             }
         })
         saveAluno(nome, turmaEscolhida, listaAlunos);
-        document.location = './success.html';
     }
 });

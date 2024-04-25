@@ -99,6 +99,10 @@ h3 {
     margin: .5rem 0;
 }
 
+#msg {
+    margin-bottom: 1rem;
+}
+
 /* FOOTER */
 
 .footer {
