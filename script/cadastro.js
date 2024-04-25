@@ -2,6 +2,7 @@ const formCadastro = document.querySelector('#form-cadastro');
 
 const checkNome = nome => {
     if (nome === '') {
+        msg.innerText = 'Digite o nome do(a) aluno(a).'
         return false;
     }
     return true;
@@ -14,7 +15,21 @@ const checkTurma = turmas => {
             isTurmaChecked = true;
         }
     });
+    isTurmaChecked ? msg.innerText = '' : msg.innerText = 'Escolha uma turma.';
     return isTurmaChecked;
+}
+
+const alunoRepetido = (nome, listaAlunos) => {
+    let repetido = false;
+
+    listaAlunos.forEach(aluno => {
+        if (nome === aluno.nome) {
+            repetido = true;
+            msg.innerText = 'Aluno(a) já está cadastrado(a).'
+        }
+    });
+
+    return repetido;
 }
 
 const saveAluno = (nome, turma, listaAlunos) => {
@@ -27,7 +42,7 @@ const saveAluno = (nome, turma, listaAlunos) => {
 
     localStorage.setItem('lista', JSON.stringify(listaAlunos));
 
-    msg.innerText = 'Aluno cadastrado com sucesso!'
+    msg.innerText = 'Aluno(a) cadastrado(a) com sucesso!'
 }
 
 formCadastro.addEventListener('submit', e => {
@@ -38,7 +53,9 @@ formCadastro.addEventListener('submit', e => {
     const msg = document.querySelector('#msg');
     let listaAlunos = JSON.parse(localStorage.getItem('lista')) || [];
 
-    if (checkNome(nome) && checkTurma(turmas)) {
+    msg.innerText = '';
+
+    if (checkNome(nome) && checkTurma(turmas) && !alunoRepetido(nome, listaAlunos)) {
         let turmaEscolhida;
         turmas.forEach(turma => {
             if (turma.checked === true) {

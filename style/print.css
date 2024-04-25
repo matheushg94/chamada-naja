@@ -1,7 +1,11 @@
 main a,
-.section,
-h2 {
+main > h2,
+.section {
     display: none;
+}
+
+.main {
+    justify-content: flex-start;
 }
 
 h1 {

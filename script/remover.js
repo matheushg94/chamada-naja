@@ -12,9 +12,9 @@ const removeAluno = (nome) => {
     });
 
     if (removido) {
-        msg.innerText = 'Aluno removido.';
+        msg.innerText = 'Aluno(a) removido(a).';
     } else {
-        msg.innerText = 'Aluno não encontrado.';
+        msg.innerText = 'Aluno(a) não encontrado(a).';
     }
 
     localStorage.setItem('lista', JSON.stringify(listaAlunos));

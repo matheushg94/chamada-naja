@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de novo aluno</title>
+    <title>Cadastrar aluno</title>
 
     <!-- CSS reset -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,21 +23,35 @@
             <form action="#" class="form" id="form-cadastro" method="get">
                 <div>
                     <label for="nome">Nome do aluno:</label>
-                    <input type="text" name="nome" id="nome" required>
+                    <input type="text" name="nome" id="nome" required size="35" placeholder="Digite o nome completo">
                 </div>
                 <div>
                     <p>Escolha uma turma:</p>
-                    <div>
-                        <input type="radio" name="turma" id="sq1800" value="Seg e Qua - 18h00"><label for="sq1800">Seg e Qua - 18h00</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="turma" id="sq1830" value="Seg e Qua - 18h30"><label for="sq1830">Seg e Qua - 18h30</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="turma" id="tq1800" value="Ter e Qui - 18h00"><label for="tq1800">Ter e Qui - 18h00</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="turma" id="tq1830" value="Ter e Qui - 18h30"><label for="tq1830">Ter e Qui - 18h30</label>
+                    <div class="radio-group">
+                        <div>
+                            <input type="radio" name="turma" id="sq1800" value="Seg e Qua - 18h"><label for="sq1800">Seg e Qua - 18h</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="turma" id="sq1830" value="Seg e Qua - 18h30"><label for="sq1830">Seg e Qua - 18h30</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="turma" id="sq1830" value="Seg e Qua - 19h15"><label for="sq1830">Seg e Qua - 19h15</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="turma" id="sq1830" value="Seg e Qua - 20h"><label for="sq1830">Seg e Qua - 20h</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="turma" id="tq1800" value="Ter e Qui - 17h45"><label for="tq1800">Ter e Qui - 17h45</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="turma" id="tq1830" value="Ter e Qui - 18h30"><label for="tq1830">Ter e Qui - 18h30</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="turma" id="tq1830" value="Ter e Qui - 19h15"><label for="tq1830">Ter e Qui - 19h15</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="turma" id="tq1830" value="Ter e Qui - 20h"><label for="tq1830">Ter e Qui - 20h</label>
+                        </div>
                     </div>
                 </div>
                 <input type="submit" class="button" value="Cadastrar">
