@@ -216,7 +216,6 @@ formVisualizar.addEventListener('submit', e => {
             turmaEscolhida = turma.value;
         }
     })
-    // const turmaEscolhida = document.querySelector('#turma-escolhida').value;
 
     const chamada = document.querySelector('.chamada');
     chamada.innerHTML = '';
